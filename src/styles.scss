@@ -1,1 +1,178 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+  background-color: #F3F2F8;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+main {
+  max-width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+  display: grid;
+
+}
+
+.grid-1_5 {
+  vertical-align: top;
+  display: inline-block;
+  width: 30%;
+  // grid-template-columns: 720 720;
+  // grid-template-rows: 720 720;
+  grid-gap: 1rem;
+}
+
+.grid-3_5 {
+  vertical-align: top;
+  display: inline-block;
+  width: 60%;
+  // grid-template-columns: 720 720;
+  // grid-template-rows: 720 720;
+  // grid-gap: 1rem;
+}
+
+.card-primary {
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  min-height: 410px;
+}
+
+.card-secondary {
+  min-height: 300px !important;
+}
+
+.btn-primary {
+  background-color: blueviolet;
+  color: #fff;
+}
+
+.balls > li {
+  // background-color: red;
+  border-radius: 50px;
+  line-height: 40px;
+  list-style: none;
+  width: 40px;
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.balls-disabled {
+  border-radius: 50px;
+  line-height: 40px;
+  list-style: none;
+  width: 30px;
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #cecece;
+  height: 30px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn-clear {
+  background: none;
+  color: #3265b7;
+  border: none;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.ml-40{
+  margin-left: 40px;
+}
+
+.btn-place{
+  display: block;
+  background-color: #3265b7;
+  padding: 15px 0 15px 0;
+  color: #FFFFFF;
+  // min-width: 100%;
+}
+
+.m-20{
+  margin: 20px;
+}
+
+.mt-10{
+  margin-top: 10px;
+}
+
+.mt-20{
+  margin-top: 20px;
+}
+
+.mb-20{
+  margin-bottom: 20px;
+}
+
+.ml-20{
+  margin-left: 20px;
+}
+
+.p-0{
+  padding: 0px !important;
+}
+
+.display-inline {
+  display: inline-block;
+}
+
+.text-input{
+  background-color: #dedede;
+  padding: 10px 20px 10px 20px;
+}
+
+.input{
+  height: 35px;
+  border: 1px solid #dedede;
+  text-align: center;
+  width: 110px;
+}
+
+.btn-ok {
+  background-color: #3265b7;
+  padding: 10px 20px 10px 20px;
+  color: #FFFFFF;
+}
+
+.text-win {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #1a8000;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 780px) {
+  .m-20{
+    margin: 0px;
+  }
+
+	.grid-1_5 {
+    display: inline-block;
+    width: 100%;
+    // grid-template-columns: 720 720;
+    // grid-template-rows: 720 720;
+    grid-gap: 1rem;
+  }
+
+  .grid-3_5 {
+    display: inline-block;
+    width: 100%;
+    // grid-template-columns: 720 720;
+    // grid-template-rows: 720 720;
+    grid-gap: 1rem;
+  }
+}

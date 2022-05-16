@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "ballNumber": 1,
+    "color": "#CC433E"
+  },
+  {
+    "id": 2,
+    "ballNumber": 2,
+    "color": "#FFF7DF"
+  },
+  {
+    "id": 3,
+    "ballNumber": 3,
+    "color": "#439D56"
+  },
+  {
+    "id": 4,
+    "ballNumber": 4,
+    "color": "#FAEAEA"
+  },
+  {
+    "id": 5,
+    "ballNumber": 5,
+    "color": "#FAC12D"
+  },
+  {
+    "id": 6,
+    "ballNumber": 6,
+    "color": "#E9F4EB"
+  },
+  {
+    "id": 7,
+    "ballNumber": 7,
+    "color": "#C84341"
+  },
+  {
+    "id": 8,
+    "ballNumber": 8,
+    "color": "#FFF7E5"
+  },
+  {
+    "id": 9,
+    "ballNumber": 9,
+    "color": "#439D56"
+  },
+  {
+    "id": 10,
+    "ballNumber": 10,
+    "color": "#FAEAEA"
+  }
+]
