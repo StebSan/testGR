@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BallService } from '../../services/ball.service';
+import { DatabusService } from '../../services/databus.service';
 
 @Component({
   selector: 'app-ball-selector',
@@ -11,7 +12,8 @@ export class BallSelectorComponent implements OnInit {
   balls:any = []
 
   constructor(
-    private ballService: BallService
+    private ballService: BallService,
+    private dataBusService: DatabusService
   ) { }
 
   ngOnInit(): void {
@@ -22,14 +24,16 @@ export class BallSelectorComponent implements OnInit {
   getBalls(){
     this.ballService.getBalls()
       .subscribe(resp => {
-        console.log("getBalls", resp);
         this.balls = resp
       })
   }
 
-  selectBall(id:string){
-    console.log("id", id);
+  selectBall(item:string){
+    this.dataBusService.sendData(item)
+  }
 
+  clearSelect() {
+    this.dataBusService.sendData("clear")
   }
 
 }

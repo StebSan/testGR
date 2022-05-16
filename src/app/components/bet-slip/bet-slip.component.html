@@ -1,35 +1,51 @@
 
 <div class="card-primary card-secondary">
   <div class="mt-20">
-    <ul class="text-center">
-      <!-- <li class="text-center balls-disabled"
-          *ngFor="let ball of balls; let index = index">{{ ball }}</li> -->
-      <li class="text-center balls-disabled"
-          *ngFor="let ball of balls; let index = index"></li>
+    <ul class="text-center balls-disabled">
+      <li class="text-center"
+          *ngFor="let ball of balls; let index = index">
+        <span *ngIf="ball == null">&nbsp;</span>
+        <span *ngIf="ball != null"
+              [style.background-color]="ball.color">{{ ball.ballNumber }}</span>
+      </li>
     </ul>
   </div>
 
   <div class="text-center">
     <div class="display-inline text-input">
-      0x
+      {{ count }}x
     </div>
     <div class="display-inline">
-      <input class="input" type="text" />
+      <form [formGroup]="valueFG">
+        <input class="input"
+               type="text"
+               name="money"
+               formControlName="money"
+               [(ngModel)]="value" />
+      </form>
     </div>
     <div class="display-inline ml-20 mt-20 mb-20">
-      <a class="btn-ok">
+      <button class="btn-ok"
+              [disabled]="valueFG.invalid"
+              (click)="changeCost(valueFG.value['money'])">
         OK
-      </a>
+      </button>
     </div>
+  </div>
+
+  <div *ngIf="messageInformation != ''" class="mt-20 text-center">
+    <span class="text-danger">{{ messageInformation }}</span>
   </div>
 
 </div>
 
 <div class="text-center mt-20">
-  <span>Total: 500$</span>
+  <span>Total: {{ total | currency:'EUR':'symbol':'.2-2' }}</span>
 </div>
 <div class="text-center mt-20">
-  <a class="btn-place">
+  <button class="btn-place"
+          (click)="startGame()"
+          [disabled]="flagStartGame || count == 0">
     Place bet
-  </a>
+  </button>
 </div>

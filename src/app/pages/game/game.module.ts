@@ -6,6 +6,7 @@ import { GameComponent } from './game.component';
 import { BallSelectorComponent } from '../../components/ball-selector/ball-selector.component';
 import { BetSlipComponent } from '../../components/bet-slip/bet-slip.component';
 import { ResultComponent } from '../../components/result/result.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ResultComponent } from '../../components/result/result.component';
   ],
   imports: [
     CommonModule,
-    GameRoutingModule
+    GameRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class GameModule { }

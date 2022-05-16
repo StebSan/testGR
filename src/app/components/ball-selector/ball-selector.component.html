@@ -8,11 +8,11 @@
       <li class="text-center"
           *ngFor="let ball of balls; let index = index"
           [style.background-color]="ball.color"
-          (click)="selectBall(ball.id)">{{ ball.ballNumber }}</li>
+          (click)="selectBall(ball)">{{ ball.ballNumber }}</li>
     </ul>
   </div>
   <div class="text-center">
-    <button class="btn-clear">
+    <button class="btn-clear" (click)="clearSelect()">
       Clear selection
     </button>
   </div>

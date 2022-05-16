@@ -22,8 +22,6 @@ main {
   vertical-align: top;
   display: inline-block;
   width: 30%;
-  // grid-template-columns: 720 720;
-  // grid-template-rows: 720 720;
   grid-gap: 1rem;
 }
 
@@ -31,9 +29,6 @@ main {
   vertical-align: top;
   display: inline-block;
   width: 60%;
-  // grid-template-columns: 720 720;
-  // grid-template-rows: 720 720;
-  // grid-gap: 1rem;
 }
 
 .card-primary {
@@ -46,13 +41,7 @@ main {
   min-height: 300px !important;
 }
 
-.btn-primary {
-  background-color: blueviolet;
-  color: #fff;
-}
-
 .balls > li {
-  // background-color: red;
   border-radius: 50px;
   line-height: 40px;
   list-style: none;
@@ -62,20 +51,35 @@ main {
   cursor: pointer;
 }
 
-.balls-disabled {
-  border-radius: 50px;
-  line-height: 40px;
-  list-style: none;
+.balls-disabled > li {
   width: 30px;
   display: inline-block;
   margin: 5px;
   cursor: pointer;
-  background-color: #cecece;
   height: 30px;
+}
+
+.balls-disabled > li > span {
+  border-radius: 50px;
+  line-height: 30px;
+  width: 100%;
+  display: inline-block;
+  background-color: #cecece;
+  height: 100%;
 }
 
 .text-center {
   text-align: center;
+}
+
+.ml-40{
+  margin-left: 40px;
+}
+
+.btn-primary {
+  background-color: blueviolet;
+  color: #fff;
+  cursor: pointer;
 }
 
 .btn-clear {
@@ -90,16 +94,40 @@ main {
   font-size: 16px;
 }
 
-.ml-40{
-  margin-left: 40px;
-}
-
 .btn-place{
   display: block;
   background-color: #3265b7;
   padding: 15px 0 15px 0;
   color: #FFFFFF;
-  // min-width: 100%;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+
+.btn-place:disabled{
+  background-color: #7395cc;
+  cursor:not-allowed;
+}
+
+.btn-ok {
+  background-color: #3265b7;
+  padding: 10px 20px 10px 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-ok:disabled {
+  background-color: #c0cee6;
+  cursor:not-allowed;
+}
+
+.btn-ok {
+  background-color: #3265b7;
+  padding: 10px 20px 10px 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+
 }
 
 .m-20{
@@ -142,17 +170,17 @@ main {
   width: 110px;
 }
 
-.btn-ok {
-  background-color: #3265b7;
-  padding: 10px 20px 10px 20px;
-  color: #FFFFFF;
-}
-
 .text-win {
   text-transform: uppercase;
   font-weight: 500;
   color: #1a8000;
   font-size: 20px;
+}
+
+.text-danger {
+  font-weight: 500;
+  color: #ba0000;
+  font-size: 16px;
 }
 
 @media screen and (max-width: 780px) {
@@ -163,16 +191,12 @@ main {
 	.grid-1_5 {
     display: inline-block;
     width: 100%;
-    // grid-template-columns: 720 720;
-    // grid-template-rows: 720 720;
     grid-gap: 1rem;
   }
 
   .grid-3_5 {
     display: inline-block;
     width: 100%;
-    // grid-template-columns: 720 720;
-    // grid-template-rows: 720 720;
     grid-gap: 1rem;
   }
 }

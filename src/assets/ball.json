@@ -2,51 +2,61 @@
   {
     "id": 1,
     "ballNumber": 1,
-    "color": "#CC433E"
+    "color": "#CC433E",
+    "result": false
   },
   {
     "id": 2,
     "ballNumber": 2,
-    "color": "#FFF7DF"
+    "color": "#FFF7DF",
+    "result": false
   },
   {
     "id": 3,
     "ballNumber": 3,
-    "color": "#439D56"
+    "color": "#439D56",
+    "result": false
   },
   {
     "id": 4,
     "ballNumber": 4,
-    "color": "#FAEAEA"
+    "color": "#FAEAEA",
+    "result": false
   },
   {
     "id": 5,
     "ballNumber": 5,
-    "color": "#FAC12D"
+    "color": "#FAC12D",
+    "result": false
   },
   {
     "id": 6,
     "ballNumber": 6,
-    "color": "#E9F4EB"
+    "color": "#E9F4EB",
+    "result": false
   },
   {
     "id": 7,
     "ballNumber": 7,
-    "color": "#C84341"
+    "color": "#C84341",
+    "result": false
   },
   {
     "id": 8,
     "ballNumber": 8,
-    "color": "#FFF7E5"
+    "color": "#FFF7E5",
+    "result": false
   },
   {
     "id": 9,
     "ballNumber": 9,
-    "color": "#439D56"
+    "color": "#439D56",
+    "result": false
   },
   {
     "id": 10,
     "ballNumber": 10,
-    "color": "#FAEAEA"
+    "color": "#FAEAEA",
+    "result": false
   }
 ]

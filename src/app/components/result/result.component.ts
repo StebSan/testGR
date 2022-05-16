@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabusService } from '../../services/databus.service';
+import { IBall } from '../../interfaces/Balls.interfaces';
+import { BallService } from '../../services/ball.service';
 
 @Component({
   selector: 'app-result',
@@ -7,9 +10,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultComponent implements OnInit {
 
-  constructor() { }
+  message: string = ""
+  balls: IBall[] = []
+  ballResult: any
+  total: number = 0
 
-  ngOnInit(): void {
+  constructor(
+    private databusService: DatabusService,
+    private ballService: BallService
+  ) { }
+
+  async ngOnInit() {
+    await this.getBalls()
+  }
+
+  getData(){
+    this.databusService.getData().subscribe(resp => {
+      this.ballResult = this.balls.filter(x => x.id == resp.balls.id)
+      if(resp.win == true){
+        this.message = "You Won"
+        this.total = resp.total
+      }else{
+        this.message = "You Lose"
+      }
+    })
+  }
+
+  getBalls(){
+    this.ballService.getBalls()
+      .subscribe(resp => {
+        this.balls = resp
+        this.getData()
+      })
+  }
+
+  newGame(){
+    window.location.reload()
   }
 
 }

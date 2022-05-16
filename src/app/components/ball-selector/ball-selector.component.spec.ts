@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BallSelectorComponent } from './ball-selector.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('BallSelectorComponent', () => {
   let component: BallSelectorComponent;
@@ -8,6 +9,9 @@ describe('BallSelectorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        HttpClientTestingModule
+      ],
       declarations: [ BallSelectorComponent ]
     })
     .compileComponents();
