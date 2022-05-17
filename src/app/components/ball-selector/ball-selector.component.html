@@ -4,6 +4,7 @@
     <h3>Numbers</h3>
   </div>
   <div>
+    <!-- Listas balls -->
     <ul class="balls text-center">
       <li class="text-center"
           *ngFor="let ball of balls; let index = index"
@@ -11,6 +12,7 @@
           (click)="selectBall(ball)">{{ ball.ballNumber }}</li>
     </ul>
   </div>
+  <!-- Btn Limpia tablero -->
   <div class="text-center">
     <button class="btn-clear" (click)="clearSelect()">
       Clear selection

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { take } from 'rxjs';
 import { BallService } from '../../services/ball.service';
 import { DatabusService } from '../../services/databus.service';
+import { IBall } from '../../interfaces/Balls.interfaces';
 
 @Component({
   selector: 'app-ball-selector',
@@ -21,17 +23,28 @@ export class BallSelectorComponent implements OnInit {
   }
 
 
+  /*
+  * Trae la informacion del servicio
+  */
   getBalls(){
     this.ballService.getBalls()
+      .pipe(take(1))
       .subscribe(resp => {
         this.balls = resp
       })
   }
 
-  selectBall(item:string){
-    this.dataBusService.sendData(item)
+  /*
+  * Envia el ball seleccionado
+  * @Params ball: data tipo IBall
+  */
+  selectBall(ball: IBall){
+    this.dataBusService.sendData(ball)
   }
 
+  /*
+  * Limpia balls seleccionadas en bet-slip
+  */
   clearSelect() {
     this.dataBusService.sendData("clear")
   }

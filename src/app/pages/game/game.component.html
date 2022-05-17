@@ -1,13 +1,16 @@
 
 <div class="grid-3_5 m-20">
+  <!-- Card Selector -->
   <div *ngIf="result == false">
     <app-ball-selector></app-ball-selector>
   </div>
+  <!-- Card Result -->
   <div *ngIf="result == true">
     <app-result></app-result>
   </div>
 </div>
 
+<!-- Card Slip -->
 <div class="grid-1_5 m-20">
   <app-bet-slip></app-bet-slip>
 </div>

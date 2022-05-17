@@ -19,6 +19,10 @@ export class GameComponent implements OnInit {
   }
 
 
+  /*
+  * Funcion leé información para
+  * mostrar o no el resultado
+  */
   getData(){
     this.databusService.getData().subscribe(resp => {
       if(resp != null){

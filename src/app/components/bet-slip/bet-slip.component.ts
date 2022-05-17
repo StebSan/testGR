@@ -32,13 +32,14 @@ export class BetSlipComponent implements OnInit {
   }
 
 
+  /*
+  * Recibe informacion desde componente ball-selector
+  */
   getData(){
     this.dataBusService.getData().subscribe(resp => {
 
       if(resp == "clear"){
-        this.balls = new Array(8)
-        this.count = 0
-        this.total = 0
+        this.clearData()
         return
 
       }else if(resp != null){
@@ -65,11 +66,26 @@ export class BetSlipComponent implements OnInit {
     })
   }
 
+  /*
+  * Limpia tablero
+  */
+  clearData(){
+    this.balls = new Array(8)
+    this.count = 0
+    this.total = 0
+  }
+
+  /*
+  * Busca ball repetida
+  */
   findBall(newsBall: any, inStock: any[]): number {
     const repetid = inStock.filter(x => x?.id == newsBall.id)
     return repetid.length
   }
 
+  /*
+  * Genera mensajes de error
+  */
   messageErr(message: string){
     this.messageInformation = message
 
@@ -78,12 +94,18 @@ export class BetSlipComponent implements OnInit {
     }, 2500);
   }
 
+  /*
+  * Crea valores para valueFG
+  */
   formBG(){
     this.valueFG = this.formBuilder.group({
       money: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.maxLength(10)]]
     })
   }
 
+  /*
+  * Valida apuesta
+  */
   changeCost(money){
     if(money < 5){
       this.messageErr('Minimum bet is 5 €')
@@ -94,12 +116,20 @@ export class BetSlipComponent implements OnInit {
     this.total = money * this.count
   }
 
+  /*
+  * Inicia Juego
+  */
   startGame(){
-    this.lottery(this.balls.slice(0, this.count))
+    this.lottery()
     this.flagStartGame = true
   }
 
-  lottery(balls: any[]) {
+  /*
+  * saca bola ganadora
+  * compara bolas seleccionadas
+  * envia bola ganadora
+  */
+  lottery() {
     const random = Math.floor(Math.random() * 10) + 1;
 
     const aux_balls = {

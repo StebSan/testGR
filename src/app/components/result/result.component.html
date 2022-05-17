@@ -4,22 +4,26 @@
     <h3>Result</h3>
   </div>
   <div>
+    <!-- Bola ganadora -->
     <ul class="p-0 balls text-center" *ngIf="this.ballResult">
       <li class="text-center"
           [style.background-color]="ballResult[0].color">{{ ballResult[0].ballNumber }}</li>
     </ul>
   </div>
+  <!-- Mensaje resultado -->
   <div class="text-center">
     <h5 class="text-win">
       {{ message }}
     </h5>
   </div>
+  <!-- Ganancia de apuesta -->
   <div class="text-center" *ngIf="total != 0">
     <h5 class="text-win">
       {{ total | currency:'EUR':'symbol':'.2-2' }}
     </h5>
   </div>
   <div>
+    <!-- reinicia el juego -->
     <button class="btn-ok" (click)="newGame()">
       New Game
     </button>

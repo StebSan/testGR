@@ -1,6 +1,7 @@
 
 <div class="card-primary card-secondary">
   <div class="mt-20">
+    <!-- Listas balls seleccionas -->
     <ul class="text-center balls-disabled">
       <li class="text-center"
           *ngFor="let ball of balls; let index = index">
@@ -12,19 +13,24 @@
   </div>
 
   <div class="text-center">
+    <!-- Multiplicador -->
     <div class="display-inline text-input">
       {{ count }}x
     </div>
+    <!-- value apuesta -->
     <div class="display-inline">
       <form [formGroup]="valueFG">
         <input class="input"
                type="text"
                name="money"
+               maxlength="10"
+               (change)="changeCost(valueFG.value['money'])"
                formControlName="money"
                [(ngModel)]="value" />
       </form>
     </div>
     <div class="display-inline ml-20 mt-20 mb-20">
+      <!-- Btn Ok -->
       <button class="btn-ok"
               [disabled]="valueFG.invalid"
               (click)="changeCost(valueFG.value['money'])">
@@ -39,10 +45,12 @@
 
 </div>
 
+<!-- Calculo total Euros -->
 <div class="text-center mt-20">
   <span>Total: {{ total | currency:'EUR':'symbol':'.2-2' }}</span>
 </div>
 <div class="text-center mt-20">
+  <!-- Btn Jugar -->
   <button class="btn-place"
           (click)="startGame()"
           [disabled]="flagStartGame || count == 0">

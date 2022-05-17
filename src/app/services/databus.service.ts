@@ -11,10 +11,16 @@ export class DatabusService {
 
   constructor() { }
 
-  sendData(message: string) {
-    this.subject.next(message);
+  /*
+   * Funcion para enviar información
+  */
+  sendData(data: any): void {
+    this.subject.next(data);
   }
 
+  /*
+   * Funcion para recibir la informacion enviada
+  */
   getData(): Observable<any> {
       return this.subject.asObservable();
   }

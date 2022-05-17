@@ -24,6 +24,10 @@ export class ResultComponent implements OnInit {
     await this.getBalls()
   }
 
+  /*
+  * Obtiene información bet-slip
+  * manda mensaje y total si gana
+  */
   getData(){
     this.databusService.getData().subscribe(resp => {
       this.ballResult = this.balls.filter(x => x.id == resp.balls.id)
@@ -36,6 +40,9 @@ export class ResultComponent implements OnInit {
     })
   }
 
+  /*
+  * Obtiene pelotas desde el service
+  */
   getBalls(){
     this.ballService.getBalls()
       .subscribe(resp => {
@@ -44,6 +51,9 @@ export class ResultComponent implements OnInit {
       })
   }
 
+  /*
+  * Reinicia el juego
+  */
   newGame(){
     window.location.reload()
   }
