@@ -1,11 +1,11 @@
 
 <div class="grid-3_5 m-20">
   <!-- Card Selector -->
-  <div *ngIf="result == false">
+  <div *ngIf="result === false">
     <app-ball-selector></app-ball-selector>
   </div>
   <!-- Card Result -->
-  <div *ngIf="result == true">
+  <div *ngIf="result === true">
     <app-result></app-result>
   </div>
 </div>

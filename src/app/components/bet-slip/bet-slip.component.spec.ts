@@ -67,7 +67,6 @@ describe('BetSlipComponent', () => {
     const data = 5
     const res = component.changeCost(data);
     expect(component.total).toBe(data * component.count);
-    // this.total = money * this.count
   });
 
   it('findBall repetid', () => {
