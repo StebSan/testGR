@@ -5,7 +5,7 @@
     <ul class="text-center balls-disabled">
       <li class="text-center"
           *ngFor="let ball of balls; let index = index">
-        <span *ngIf="ball === null">&nbsp;</span>
+        <span *ngIf="ball == null">&nbsp;</span>
         <span *ngIf="ball != null"
               [style.background-color]="ball.color">{{ ball.ballNumber }}</span>
       </li>
